@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapa s miestami</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+</head>
+<body>
+	<header>
+	  <h1>Mapa miest</h1>
+	  <nav>
+		<a href="gallery.html">Galéria</a>
+		<a href="map.html"  class="active">Mapa</a>
+	  </nav>
+	</header>
+	<main class="main">
+	
+	  <section id="map-gallery" class="map-gallery">
+		<header>
+			<input type="text" id="filter" placeholder="Vyhľadať podľa názvu alebo popisu...">
+		</header>
+		<div class="return-map" id="return-map">Вернуться на карту</div>
+		<div id="group-photo" class="group-photo">
+		</div>
+	  </section>
+
+	  <section id="map-container" class="map-container">
+		<div id="map">
+		</div>
+
+		<div class="container">
+			<button id="toggle-route">Trasa</button>
+			<p id="route-length"></p>
+		</div>
+	  </section>
+
+	</main>
+		
+		<div id="photo-modal" class="modal">
+			<div id="img" class="img">
+				<div class="close-img"> 
+					<div onclick="closeModal()" title="close">✖</div> 
+				</div>
+				<div class="img-box">
+					<img id="modal-image" src="" alt="">
+					<div class="img-info">
+						<div id="modal-title"></div>
+						<div id="modal-description"></div>
+						<div id="modal-datetime"></div>
+						<div id="modal-coordinates"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="modal-overlay" class="modal-overlay"></div>
+	
+	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.12/leaflet-routing-machine.min.js"></script>
+	<script src="map.js"></script>
+</body>
+</html>

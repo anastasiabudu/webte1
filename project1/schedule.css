@@ -1,0 +1,169 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/Roboto-LightItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: #404040;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.container {
+    max-width: 1920px;
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif;
+    color: aliceblue;
+    padding-left: 20px;
+}
+
+.table-container {
+    padding-left: 20px;
+    overflow-x: auto;
+}
+
+.main-title {
+    margin: 15px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    color: aliceblue;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.list {
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 20px;
+    border-bottom: 2px solid aliceblue;
+    width: auto;
+}
+
+.list-item {
+    color: aliceblue;
+    transition: color .3s ease-in-out;
+    text-decoration: none;
+}
+
+.list-item:hover {
+    color: #b3b3ff;
+}
+
+.list-item:focus-visible {
+    outline: 0;
+    border-bottom: 3px solid #b3b3ff;
+    outline-offset: 7px;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.photo {
+    width: 300px;
+    height: auto;
+}
+
+.text {
+    color: aliceblue;
+    display: flex;
+}
+
+.text-2 {
+    margin-right: 50px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px;
+    border: 2px solid #C71585;
+    text-align: center;
+    color: aliceblue;
+    font-size: 12px;
+}
+
+thead th {
+    background-color: #2b2b2b;
+    font-size: 1.1em;
+    color: white;
+}
+
+tbody th {
+    background-color: #404040;
+    width: 10%;
+    font-size: 1.1em;
+}
+
+td.lesson {
+    font-size: 1.1em;
+}
+
+td.empty {
+    background-color: #303030;
+}
+
+td.lesson.green {
+    background-color: #2F4F4F;
+}
+
+td.lesson.blue {
+    background-color: #4682B4;
+}
+
+td.lesson.pink {
+    background-color: #4B0082;
+}
+
+.ut tr {
+    border-bottom: #FFF0F5;
+}
+
+td[colspan] {
+    background-color: #333;
+    font-style: italic;
+}
+
+tbody tr:nth-child(odd) th {
+    background-color: #331483;
+}
+
+tbody tr:nth-child(even) th {
+    background-color: #210223;
+}
+
+tbody tr:nth-child(odd) td {
+    background-color: #331483;
+}
+
+tbody tr:nth-child(even) td {
+    background-color: #210223;
+}
+
+tbody td.lesson,
+tbody td.empty {
+    background-color: initial;
+}

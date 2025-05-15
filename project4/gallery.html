@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotogaléria</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.1/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.1/css/lg-thumbnail.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.1/css/lg-autoplay.min.css">
+</head>
+<body>
+    <header>
+        <h1>Fotogaléria</h1>
+        <nav>
+            <a href="gallery.html" class="active">Galéria</a>
+            <a href="map.html">Mapa</a>
+        </nav>
+        <input type="text" id="filter" placeholder="Vyhľadať podľa názvu alebo popisu...">
+    </header>
+
+    <main>
+        <section id="gallery"></section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.1/lightgallery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.1/plugins/thumbnail/lg-thumbnail.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.1/plugins/fullscreen/lg-fullscreen.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.1/plugins/autoplay/lg-autoplay.min.js"></script>
+	<script src=".../../gallery.js"></script>
+</body>
+</html>

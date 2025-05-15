@@ -1,0 +1,351 @@
+@font-face {
+    font-family: 'PlayfairDisplay';
+    src: url('fonts/PlayfairDisplay-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-size: 17px;
+    padding: 8px;
+    background-color:#283347;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #dfe7f2;
+    padding: 20px;
+    border-radius: 15px; /* Увеличьте это значение для большей округлости */
+    border: 1px solid lightgrey;
+    max-width: 800px;
+    margin: 50px auto;
+}
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+h2{
+    border-bottom: 2px solid #586c91; /* Фиолетовая линия под заголовком */
+    padding-bottom: 10px; /* Отступ под заголовком */
+
+}
+.radio-group {
+    display: flex;
+    flex-direction: row; /* Горизонтальное размещение */
+    align-items: center;
+}
+.radio-group label {
+    margin-left: 5px; /* Отступ между радиокнопками и метками */
+    margin-top: 0; /* Убираем верхний отступ */
+}
+.radio-group div {
+    margin-right: 20px; /* Отступ между радиокнопками */
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -16px;
+}
+
+.col-50 {
+    flex: 50%;
+    padding: 0 16px;
+    margin-bottom: 20px;
+}
+
+.col-100 {
+    flex: 100%;
+    padding: 0 16px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #f4f7fc;
+    border-radius: 3px;
+    transition: border-color 0.3s ease;
+}
+
+input.error, select.error ,.error-msg {
+    border-color: #F90627;
+}
+
+
+
+input.valid, select.valid {
+    border-color:#AEC670;
+}
+
+
+
+.error-msg {
+    color: #F90627;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+.price {
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+/* Горизонтальное выравнивание для блока с настройками */
+.settings-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.settings-row > div {
+    flex: 1;
+    margin: 0 10px;
+}
+
+#totalPrice {
+    font-size: 18px;
+    color: #333;
+}
+
+#submitBtn {
+    width: 100%;
+    background-color: #283347; /* Цвет кнопки */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#submitBtn:hover {
+    background-color: #7fb9c2; /* Темнее при наведении */
+}
+.price-display {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input[type="radio"] {
+    accent-color: #164f55;
+}
+
+input[type="checkbox"] {
+    accent-color: #164f55;
+}
+
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed; /* Остается на месте */
+    z-index: 1; /* Сверху других элементов */
+    left: 0;
+    top: 0;
+    width: 100%; /* Полная ширина */
+    height: 100%; /* Полная высота */
+    overflow: auto; /* Если нужно, прокрутка */
+    background-color: rgba(0, 0, 0, 0.6); /* Темный фон с большей прозрачностью */
+    backdrop-filter: blur(5px); /* Эффект размытия фона */
+}
+
+.modal-content {
+    background-color: #fff; /* Светлый фон */
+    margin: 10% auto; /* Отступ сверху и по центру */
+    padding: 20px;
+    border-radius: 12px; /* Закругленные углы */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Эффект тени */
+    width: 50%; /* Ширина 50% */
+    max-width: 600px; /* Максимальная ширина */
+    animation: fadeIn 0.5s; /* Плавное появление */
+}
+
+/* Анимация плавного появления */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.close {
+    color: #333;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #164f55; /* Красный цвет при наведении */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Стили для кнопок */
+button {
+    background-color: #164f55; /* Зеленый фон кнопки */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 5px;
+    cursor: pointer;
+    border-radius: 5px; /* Закругленные углы */
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #7fb9c2; /* Более темный зеленый при наведении */
+}
+
+
+.comments-label {
+    display: block;
+    margin-top: 25px;
+    font-weight: bold; /* Жирный шрифт для выделения */
+    font-size: 1.1em; /* Увеличенный размер шрифта */
+    border-bottom: 2px solid #3498db; /* Подчеркивание для выделения */
+    padding-bottom: 5px; /* Отступ снизу от текста до линии */
+}
+
+textarea {
+    width: 100%; /* Ширина на 100% контейнера */
+    padding: 10px; /* Внутренний отступ */
+    border: 1px solid #ccc; /* Рамка */
+    border-radius: 4px; /* Закругленные углы */
+    resize: vertical; /* Позволяет изменять размер только по вертикали */
+    margin-bottom: 20px; /* Отступ снизу */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень для эффекта глубины */
+}
+
+/* Контейнер Flexbox для выравнивания двух вопросов в один ряд */
+.flex-container {
+    display: flex;
+    justify-content: space-between; /* Распределение места между элементами */
+    margin-bottom: 10px; /* Отступ снизу */
+    width: 100%; /* Полная ширина для общего контейнера */
+}
+
+.field-container {
+    display: flex;
+    flex-direction: column; /* Столбчатое выравнивание для метки и поля ввода */
+    flex: 1; /* Занимает одинаковое пространство в строке */
+    margin-right: 10px; /* Отступ между полями */
+    margin-top: 10px;
+}
+
+/* Убираем отступ у последнего элемента */
+.field-container:last-child {
+    margin-right: 0;
+}
+
+/* Метки */
+.field-container label {
+    margin-bottom: 5px; /* Отступ снизу от метки */
+}
+
+/* Поля ввода и выпадающий список */
+.field-container select, .field-container input[type="text"] {
+    width: 100%; /* Полная ширина полей ввода */
+    padding: 5px; /* Внутренний отступ */
+    border: 2px solid transparent; /* Начальная граница */
+}
+.question-button {
+    font-size: 18px;  /* Размер текста */
+    cursor: pointer;  /* Указатель мыши */
+    width: 40px;      /* Ширина кнопки */
+    height: 40px;     /* Высота кнопки */
+    border-radius: 50%; /* Закругление кнопки (делает её круглой) */
+    border: 2px solid #283347; /* Обводка */
+    background-color: #f1f1f1; /* Цвет фона кнопки */
+    color: #333;      /* Цвет текста */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.question-button:hover {
+    background-color: #ddd; /* Изменение фона при наведении */
+}
+
+#hiddenNameField {
+    display: none; /* Скрываем поле по умолчанию */
+    margin-top: 10px; /* Отступ сверху */
+    font-size: 16px; /* Размер шрифта */
+}
+
+
+@media (max-width: 767px) {
+    .row {
+        flex-direction: column;
+    }
+
+    .col-50, .col-100 {
+        padding: 0;
+    }
+
+    .container {
+        margin: 0 auto; /* Центрируем контейнер */
+    }
+
+    h1 {
+        font-size: 1.3em; /* Уменьшен размер заголовка для маленьких экранов */
+    }
+
+    h2 {
+        font-size: 1em; /* Уменьшен размер подзаголовка для маленьких экранов */
+    }
+
+    /* Уменьшаем размеры текстовых полей */
+    input, select, textarea {
+        font-size: 12px; /* Уменьшаем размер шрифта для инпутов, селектов и textarea */
+        padding: 8px; /* Уменьшаем внутренние отступы */
+        margin-bottom: 15px; /* Увеличиваем отступ снизу, чтобы элементы не накладывались друг на друга */
+    }
+
+    /* Настройки для радиокнопок и чекбоксов */
+    .radio-group label {
+        font-size: 10px; /* Уменьшен размер текста для меток радиокнопок */
+    }
+
+    .comments-label {
+        font-size: 0.9em; /* Уменьшен размер текста для меток комментариев */
+    }
+
+    .price {
+        font-size: 0.9em; /* Уменьшен размер текста для цены */
+    }
+
+    /* Стили для кнопок */
+    #submitBtn, button {
+        font-size: 12px; /* Уменьшен размер шрифта для кнопок */
+        padding: 8px; /* Уменьшены внутренние отступы для кнопок */
+    }
+
+    /* Стили для модального окна */
+    .modal-content {
+        width: 90%; /* Ширина модального окна 90% на маленьких экранах */
+        padding: 15px; /* Уменьшены отступы внутри модального окна */
+    }
+}
+
+
+
+

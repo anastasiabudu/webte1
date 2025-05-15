@@ -1,0 +1,366 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+	/* display: flex; */
+    /* align-items: center; */
+    /* justify-content: space-around; */
+}
+
+.active {
+	color: red
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.container {
+	max-width: 960px;
+	margin: 0 auto;
+}	
+
+nav a:hover {
+    color: #cc99ec;
+}
+
+#filter {
+    padding: 10px;
+    width: 80%;
+    max-width: 400px;
+    margin: 10px auto;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+#gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    padding: 20px;
+}
+
+.photo {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.photo:hover {
+    transform: scale(1.05);
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.photo:hover img {
+    opacity: 0.7;
+	cursor: pointer;
+}
+
+.modal {
+    position: fixed;
+    top: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    max-width: 90%;
+    max-height: 90vh;
+    /* overflow-y: auto; */
+    display: none;
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+.img-box {
+	position: relative;
+}
+
+.img-info {
+	position: absolute;
+	bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0 0 10px;
+	background: #f0f0f05e;
+}
+
+#modal-title {
+	font-weight: 600;
+	margin: 5px 0;
+	text-align: center;
+}
+
+#modal-description,
+#modal-datetime,
+#modal-coordinates {
+	text-align: center;
+	font-size: 12px;
+}
+
+.modal.hide {
+    animation: fadeOut 0.3s ease-out forwards;
+}
+
+.modal img {
+    width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+}
+
+.modal-navigation {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.modal-navigation button {
+	margin: 0 5px;
+	padding: 5px 10px;
+	font-size: 12px;
+}
+
+button#prev,
+button#next {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 1.5em;
+    padding: 10px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+button#prev:hover,
+button#next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+button {
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+    background: #f44336;
+}
+
+button:hover {
+    background-color: #d32f2f;
+}
+
+.icon-status {
+	margin: 0 0 0 5px;
+}
+
+/* Стили для карты */
+
+.main {
+	position: relative;
+}
+
+
+.map-gallery {
+	display: none;
+	position: absolute;
+	text-align: center;
+	z-index: 10;
+	width: 100%;
+	height: 100vh;
+}
+
+.group-photo {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    padding: 20px;
+}
+
+#map {
+    height: 500px;
+    width: 100%;
+}
+
+.return-map {
+	padding: 10px;
+	cursor: pointer;
+	font-size: 16px;
+	color: #000;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	transition: background-color 0.3s;	
+}
+
+.return-map:hover {
+	color: #fff;
+	background: #000;
+}
+
+.close-img {
+	display: flex;
+	flex-direction: row-reverse;
+}
+
+.close-img div {
+	cursor: pointer;
+}
+
+/* Контейнер с изображением */
+.image-container {
+    position: relative;
+    display: inline-block;
+    width: 300px; /* Размер картинки */
+    height: 200px;
+    margin: 10px;
+}
+
+/* Стили для изображения */
+.image-container img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: opacity 0.3s ease-in-out; /* Плавное исчезновение картинки */
+}
+
+/* Текст, всплывающий при наведении */
+.image-container .hover-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Полупрозрачный фон */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.2em;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* При наведении на контейнер, показывается текст */
+.image-container:hover img {
+    opacity: 0;
+}
+
+.image-container:hover .hover-text {
+    opacity: 1;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.65); /* Черный цвет с прозрачностью 50% */
+  z-index: 998; /* Должен быть меньше, чем у модального окна */
+  display: none; /* Скрываем по умолчанию */
+}
+
+@media (max-width: 800px){
+	.modal {
+		width: 90%;
+	}
+}
+
+
+
+
+
+/* Стили для контейнера длины маршрута */
+#route-length {
+    font-size: 20px;
+    color: #333;
+    font-weight: 600;
+    text-align: center;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: none; /* Скрыто по умолчанию */
+    margin-top: 20px;
+    width: 100%;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all 0.3s ease; /* Плавное изменение */
+}
+
+/* Когда длина маршрута обновляется */
+#route-length.updated {
+    background-color: #d4f8d4; /* Светлый зеленый фон */
+    color: #388e3c; /* Тёмно-зеленый цвет текста */
+    font-weight: bold;
+}
+
+/* Добавление отступов для кнопки Trasa */
+#toggle-route {
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px; /* Отступ сверху */
+    margin-bottom: 20px; /* Отступ снизу */
+    margin-left: 10px; /* Отступ слева */
+    margin-right: 10px; /* Отступ справа */
+    transition: background-color 0.3s, transform 0.2s;
+    background-color: #4caf50;
+    font-size: 16px;
+}
+
+.leaflet-routing-container {
+    width: 400px; /* Можно изменить на нужную ширину */
+    max-height: 300px; /* Чтобы контейнер не выходил за пределы экрана */
+    overflow-y: auto; /* Прокрутка, если контент не помещается */
+    background-color: rgba(255, 255, 255, 0.9); /* Полупрозрачный фон */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-left: 10px; /* Отступ слева от карты */
+}
+
+@media (max-width: 800px) {
+    .leaflet-routing-container {
+        width: 90%; /* Занимает 90% ширины экрана */
+        max-height: 200px; /* Меньшая высота для маленьких экранов */
+        margin: 10px auto; /* Центрирование на маленьких экранах */
+        padding: 8px;
+    }
+
+    #map {
+        height: 400px; /* Уменьшаем высоту карты для маленьких экранов */
+    }
+
+    .button {
+        width: 100%; /* Кнопки растягиваются на всю ширину */
+        font-size: 14px; /* Меньший шрифт */
+        padding: 8px 10px; /* Уменьшаем отступы */
+    }
+}
+

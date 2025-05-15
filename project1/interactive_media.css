@@ -1,0 +1,108 @@
+@media (max-width: 480px) {
+    h1,h2{
+        font-size: 20px;
+    }
+    body{
+        font-size: 14px;
+    }
+
+    .photo {
+        width: 100%;
+    }
+
+    .list-item {
+        font-size: 12px;
+    }
+
+    .flag img {
+        width: 10vw;
+    }
+
+    .info-text {
+        font-size: 10px;
+    }
+
+    .footer-text {
+        font-size: 10px;
+    }
+}
+
+
+@media (min-width: 481px) and (max-width: 768px) {
+    h1,h2{
+        font-size: 25px;
+    }
+    body {
+        font-size: 16px;
+    }
+
+    .photo {
+        width: 80%;
+    }
+
+    .list-item {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .flag img {
+        width: 8vw;
+    }
+
+}
+
+@media (min-width: 769px) and (max-width: 1199px) {
+    h1,h2{
+        font-size: 28px;
+    }
+    body {
+        font-size: 22px;
+    }
+
+    .photo {
+        width: 90%;
+    }
+
+    nav ul {
+        flex-direction: row;
+        padding: 0;
+    }
+
+
+    .list-item {
+        margin-bottom: 15px;
+        font-size: 20px;
+    }
+
+    .flag img {
+        width: 6vw;
+    }
+}
+
+
+@media (min-width: 1200px) {
+    h1,h2{
+        font-size: 32px;
+    }
+    body{
+        font-size: 30px;
+    }
+    .container {
+        padding: 0 15px;
+    }
+
+    .photo {
+        width: 70%;
+    }
+
+    .list {
+        justify-content: space-around;
+    }
+    .list-item{
+        font-size: 24px;
+    }
+
+    .flag img {
+        width: 5vw;
+    }
+}

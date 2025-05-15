@@ -1,0 +1,162 @@
+[
+  {
+    "image_path": "images/photo1.jpg",
+    "title": "Vojnové vozidlo",
+    "datetime": "2024-11-19T14:00:00",
+    "description": "Kiev",
+    "coordinates": [50.4501, 30.5234],
+    "file_path": "photo1.jpg"
+  },
+  {
+    "image_path": "images/photo2.jpg",
+    "title": "Môj dom",
+    "datetime": "2024-11-19T14:00:00",
+    "description": "Kiev",
+    "coordinates": [50.4500, 30.5199],
+    "file_path": "photo2.jpg"
+  },
+  {
+    "image_path": "images/photo3.jpg",
+    "title": "Západ slnka v Kyjeve",
+    "datetime": "2024-11-19T14:00:00",
+    "description": "Kiev",
+    "coordinates": [50.4500, 30.5100],
+    "file_path": "photo3.jpg"
+  },
+  {
+    "image_path": "images/photo4.jpg",
+    "title": "Radnica na hlavnom námestí",
+    "datetime": "2024-11-19T14:00:00",
+    "description": "Lviv",
+    "coordinates": [49.8397, 24.0297],
+    "file_path": "photo4.jpg"
+  },
+  {
+    "image_path": "images/photo5.jpg",
+    "title": "Lvivská opera",
+    "datetime": "2024-11-19T14:00:00",
+    "description": "Lviv",
+    "coordinates": [49.8385, 24.0212],
+    "file_path": "photo5.jpg"
+  },
+  {
+    "image_path": "images/photo6.jpg",
+    "title": "Kontaktná ZOO „Hucul Land“",
+    "datetime": "2024-11-19T14:00:00",
+    "description": "Bukovel",
+    "coordinates": [48.4132, 24.4211],
+    "file_path": "photo6.jpg"
+  },
+  {
+    "image_path": "images/photo7.jpg",
+    "title": "Noc v Bukoveli",
+    "datetime": "2024-11-19T14:00:00",
+    "description": "Bukovel",
+    "coordinates": [48.1486, 24.5900],
+    "file_path": "photo7.jpg"
+  },
+  {
+    "image_path": "images/photo8.jpg",
+    "title": "Hlavné námestie v Trenčíne",
+    "datetime": "2024-11-19T14:00:00",
+    "description": "Trencin",
+    "coordinates": [48.8945, 18.0444],
+    "file_path": "photo8.jpg"
+  },
+  {
+    "image_path": "images/photo9.jpg",
+    "title": "Výhľad na Bratislavu z Bratislavského hradu",
+    "datetime": "2024-11-19T14:00:00",
+    "description": "Bratislava",
+    "coordinates": [48.1765, 17.0775],
+    "file_path": "photo9.jpg"
+  },
+  {
+    "image_path": "images/photo10.jpg",
+    "title": "Krásny západ slnka v Bratislave",
+    "datetime": "2024-11-19T14:00:00",
+    "description": "Bratislava",
+    "coordinates": [48.1723, 17.2005],
+    "file_path": "photo10.jpg"
+  },
+  {
+    "image_path": "images/photo11.jpg",
+    "title": "Bratislavský hrad",
+    "datetime": "2024-11-19T14:00:00",
+    "description": "Bratislava",
+    "coordinates": [48.1482, 17.1067],
+    "file_path": "photo11.jpg"
+  },
+  {
+    "image_path": "images/photo12.jpg",
+    "title": "Alpy v srdci Švajčiarska",
+    "datetime": "2024-11-19T14:00:00",
+    "description": "Switzerland",
+    "coordinates": [46.9481, 7.4474],
+    "file_path": "images/photo12.jpg"
+  },
+  {
+    "image_path": "images/photo13.jpg",
+    "title": "Chrám La Sagrada Família, dielo Antonia Gaudího",
+    "datetime": "2024-11-19T14:00:00",
+    "description": "Barcelona",
+    "coordinates": [41.4036, 2.1744],
+    "file_path": "photo13.jpg"
+  },
+  {
+    "image_path": "images/photo14.jpg",
+    "title": "Mesto umenia a vied",
+    "datetime": "2024-11-19T14:00:00",
+    "description": "Valencia",
+    "coordinates": [39.4599, -0.3583],
+    "file_path": "photo14.jpg"
+  },
+  {
+    "image_path": "images/photo15.jpg",
+    "title": "Červené siluety",
+    "datetime": "2024-11-19T14:00:00",
+    "description": "Valencia",
+    "coordinates": [39.5698, -0.3750],
+    "file_path": "photo15.jpg"
+  },
+  {
+    "image_path": "images/photo16.jpg",
+    "title": "Plač pod závojom",
+    "datetime": "2024-11-19T14:00:00",
+    "description": "Valencia",
+    "coordinates": [39.4736, -0.3792],
+    "file_path": "photo16.jpg"
+  },
+  {
+    "image_path": "images/photo17.jpg",
+    "title": "Castillo de los Serranos",
+    "datetime": "2024-11-19T14:00:00",
+    "description": "Valencia",
+    "coordinates": [39.4682, -0.3771],
+    "file_path": "photo17.jpg"
+  },
+  {
+    "image_path": "images/photo18.jpg",
+    "title": "Morská jaskyňa na Palma de Mallorca",
+    "datetime": "2024-11-19T14:00:00",
+    "description": "Palma-de-Mallorca",
+    "coordinates": [39.5590, 2.6488],
+    "file_path": "photo18.jpg"
+  },
+  {
+    "image_path": "images/photo19.jpg",
+    "title": "Tajomný ostrov s vyhliadkovou vežou",
+    "datetime": "2024-11-19T14:00:00",
+    "description": "Palma-de-Mallorca",
+    "coordinates": [39.4699, 2.6270],
+    "file_path": "photo19.jpg"
+  },
+  {
+    "image_path": "images/photo20.jpg",
+    "title": "Jaskyňa medzi skalami Palma de Mallorca",
+    "datetime": "2024-11-19T14:00:00",
+    "description": "Palma-de-Mallorca",
+    "coordinates": [39.145353, 2.946708],
+    "file_path": "photo20.jpg"
+  }
+]

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objednávka</title>
+    <link rel="stylesheet" href="2_css.css">
+</head>
+<body>
+
+<form action="https://form2mail.iolab.sk/form2mail.php" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="apikey" value="5fc6f2233d7fc85aa4aae3c1daa841a7">
+    <input type="hidden" name="from" value="xbudu@stuba.sk">
+    <input type="hidden" name="sender" value="Anastasia Budu">
+    <input type="hidden" name="to" value="feistu01@gmail.com">
+    <input type="hidden" name="subject" value="Anastasia Budu formular">
+    <input type="hidden" name="redirectOk" value="https://is.stuba.sk/system/login.pl?odhlasen=1;lang=sk">
+    <input type="hidden" name="redirectFalse" value="https://habr.com/ru/articles/792808/">
+
+    <div class="container">
+        <h1>Formulár na prenájom auta</h1>
+
+        <!-- Objednávajúci Section -->
+        <h2>Objednávateľ</h2>
+        <div class="row">
+            <div class="col-50">
+                <label for="firstName">Meno*</label>
+                <input type="text" id="firstName" name="firstName" maxlength="20" placeholder="Anastasia" required>
+                <p id="firstNameErrorMsg" class="error-msg"></p>
+            </div>
+            <div class="col-50">
+                <label for="lastName">Priezvisko*</label>
+                <input type="text" id="lastName" name="lastName" maxlength="20" placeholder="Budu" required>
+                <p id="lastNameErrorMsg" class="error-msg"></p>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-50">
+                <label>Pohlavie*</label>
+                <div class="radio-group">
+                    <div>
+                        <input type="radio" id="male" name="gender" value="Muž" required>
+                        <label for="male">Muž</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="female" name="gender" value="Žena" required>
+                        <label for="female">Žena</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="ine" name="gender" value="Ine" required>
+                        <label for="ine">Ine</label>
+                    </div>
+                </div>
+                <p id="genderErrorMsg" class="error-msg"></p> <!-- Добавлено здесь -->
+            </div>
+
+
+            <div class="col-50">
+                <label for="dob">Dátum narodenia*</label>
+                <input type="date" id="dob" name="dob" required>
+                <p id="dobErrorMsg" class="error-msg"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-50">
+                <label for="age">Vek*</label>
+                <input type="number" id="age" name="age"  min="1" max="120" required>
+                <p id="ageErrorMsg" class="error-msg"></p>
+            </div>
+        </div>
+
+        <h2>Kontaktné informácie</h2>
+        <div class="row">
+            <div class="col-100">
+                <label for="email">Email*</label>
+                <input type="email" id="email" name="email" maxlength="30" placeholder="mail@gmail.com" required>
+                <p id="emailErrorMsg" class="error-msg"></p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-100">
+                <label for="phone">Telefónne číslo*</label>
+                <input type="tel" id="phone" name="phone" maxlength="30" placeholder="+421 --- --- ---" required>
+                <p id="phoneErrorMsg" class="error-msg"></p>
+            </div>
+        </div>
+
+        <h2>Rezervácia</h2>
+
+        <div class="row">
+            <div class="col-50">
+                <label for="reservationDate">Dátum rezervácie*</label>
+                <input type="datetime-local" id="reservationDate" name="reservationDate" required onkeydown="return false">
+                <p id="dateErrorMsg" class="error-msg"></p>
+            </div>
+            <div class="col-50">
+                <label for="reservationDuration">Dĺžka prenájmu*</label>
+                <select id="reservationDuration" name="reservationDuration" required onchange="calculatePrice();">
+                    <option value="" disabled selected>----</option>
+                    <option value="1">1 deň</option>
+                    <option value="2">2 dni</option>
+                    <option value="3">3 dni</option>
+                </select>
+                <p id="durationErrorMsg" class="error-msg"></p>
+            </div>
+        </div>
+
+        <h3>Výber vozidla:</h3>
+        <div class="settings-row">
+            <div>
+                <label for="carType">Typ vozidla: </label>
+                <select id="carType" name="carType" onchange="updateCarBrand(); calculatePrice();">
+                    <option value="" disabled selected>----</option>
+                    <option value="sedan" data-price="30">Sedan (30€/day)</option>
+                    <option value="universalne" data-price="35">Univerzálne (35€/day)</option>
+                    <option value="hatchback" data-price="40">Hatchback (40€/day)</option>
+                    <option value="minivan" data-price="50">Minivan (50€/day)</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="carBrand">Značka vozidla:</label>
+                <select id="carBrand" name="carBrand" onchange="updateInsuranceOptions(); calculatePrice();">
+                    <option value="" disabled selected>----</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="extras">Chcete pridať poistenie?</label>
+                <select id="extras" name="extras" disabled onchange="calculatePrice();">
+                    <option value="" disabled selected>----</option>
+                </select>
+            </div>
+        </div>
+
+        <h3>Vyberte typ prevodovky:</h3>
+        <div>
+            <input type="radio" id="automatic" name="transmission" value="automatic" onclick="addFields(); calculatePrice()">
+            <label for="automatic">Automat (10€)</label>
+        </div>
+        <div>
+            <input type="radio" id="manual" name="transmission" value="manual" onclick="addFields(); calculatePrice()">
+            <label for="manual">Mechanical (5€)</label>
+        </div>
+        <div>
+            <input type="radio" id="sequential" name="transmission" value="sequential" onclick="addFields(); calculatePrice()">
+            <label for="sequential">Sekvenčný (7€)</label>
+        </div>
+
+        <!-- Здесь будут добавляться новые поля -->
+        <div id="questionsContainer"></div>
+
+
+
+        <h3>Zujem o ďalšie služby:</h3>
+        <div>
+            <input type="checkbox" id="gps" name="extraServices[]" value="gps">
+            <label for="gps">GPS (5€)</label>
+        </div>
+        <div>
+            <input type="checkbox" id="childSeat" name="extraServices[]" value="childSeat">
+            <label for="childSeat">Detská sedačka (7€)</label>
+        </div>
+        <div>
+            <input type="checkbox" id="additionalDriver" name="extraServices[]" value="additionalDriver">
+            <label for="additionalDriver">Additional Driver (8€)</label>
+        </div>
+        <div>
+            <input type="checkbox" id="otherService" name="otherService" onclick="toggleOtherService()">
+            <label for="otherService">Iné :</label>
+            <div id="otherServiceField" style="display:none;">
+                <input type="text" id="otherServiceInput" placeholder="Zadajte detaily služby">
+            </div>
+        </div>
+
+        <div>
+            <label for="userComments" class="comments-label">Vaše požiadavky alebo pripomienky:</label><br>
+            <textarea id="userComments" name="userComments" rows="4" cols="50" placeholder="Napíšte svoje požiadavky tu..."></textarea>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div></div>
+
+            <div style="background-color: #f0f0f0; padding: 10px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin: 10px;">
+                <span id="totalPrice">Celková cena: 0€</span>
+            </div>
+        </div>
+        <button id="showNameButton" type="button" class="question-button">?</button>
+
+        <!-- Скрытое текстовое поле -->
+        <input type="text" id="hiddenNameField" value="Anastasia Budu" readonly>
+
+        <div style="text-align: center; margin-top: 20px;">
+            <button type="button" id="submitBtn" onclick="showSummary()">Prejsť ku zhrnutiu</button>
+        </div>
+
+        <div id="summaryModal" class="modal" style="display:none;">
+            <div class="modal-content">
+                <span class="close" onclick="closeSummary()">&times;</span>
+                <h2>Zhrnutie formulára</h2>
+                <div id="summary">
+                    <p>Meno: <span id="summaryFirstName"></span></p>
+                    <p>Priezvisko: <span id="summaryLastName"></span></p>
+                    <p>Pohlavie: <span id="summaryGender"></span></p>
+                    <p>Dátum narodenia: <span id="summaryDob"></span></p>
+                    <p>Vek: <span id="summaryAge"></span></p>
+                    <p>Email: <span id="summaryEmail"></span></p>
+                    <p>Telefón: <span id="summaryPhone"></span></p>
+                    <p>Dátum rezervácie: <span id="summaryReservationDate"></span></p>
+                    <p>Dĺžka prenájmu: <span id="summaryReservationDuration"></span></p>
+                    <p>Typ vozidla: <span id="summaryCarType"></span></p>
+                    <p>Značka vozidla: <span id="summaryCarBrand"></span></p>
+                    <p>Poistenie: <span id="summaryInsurance"></span></p>
+                    <p>Typ prevodovky: <span id="summaryTransmission"></span></p>
+                    <p>Typ paliva: <span id="summaryFuelType"></span></p> <!-- Новый элемент для типа топлива -->
+                    <p>Kde cestujete: <span id="summaryTripDestination"></span></p> <!-- Новый элемент для места назначения -->
+                    <p>Dodatočné služby: <span id="summaryExtras"></span></p>
+                    <p>Vaše požiadavky alebo pripomienky: <span id="summaryComments"></span></p> <!-- Новый элемент для комментариев -->
+
+                    <p><span id="summaryTotalPrice"></span></p>
+                </div>
+                <div style="text-align: center; margin-top: 20px;">
+                    <button type="button" onclick="closeSummary()">Vrátiť sa späť</button>
+                    <br>
+                    <button id="confirmButton" class="btn-confirm">Potvrdiť</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<script src="2_js.js"></script>
+</body>
+</html>
